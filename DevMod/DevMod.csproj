@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">DebugLinux</Configuration>
@@ -43,18 +43,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="TowerFall">
       <HintPath>..\bin\BaseTowerFall.exe</HintPath>
     </Reference>
     <Reference Condition=" '$(Configuration)' == 'DebugLinux' " Include="FNA">
       <HintPath>..\bin\Original\FNA.dll</HintPath>
     </Reference>
-    <Reference Condition=" '$(Configuration)' == 'DebugWindows' " Include="Microsoft.Xna.Framework" />
-    <Reference Condition=" '$(Configuration)' == 'DebugWindows' " Include="Microsoft.Xna.Framework.Game" />
-    <Reference Condition=" '$(Configuration)' == 'DebugWindows' " Include="Microsoft.Xna.Framework.Graphics" />
-    <Reference Condition=" '$(Configuration)' == 'DebugWindows' " Include="Microsoft.Xna.Framework.Net" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Exec Command="../bin/Patcher.exe patch Mod.dll DevMod.dll" WorkingDirectory="../bin" />
+    <Exec Command="..\bin\Patcher.exe patch Mod.dll DevMod.dll" WorkingDirectory="..\bin" />
   </Target>
 </Project>

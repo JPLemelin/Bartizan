@@ -1,2 +1,8 @@
 bin/
+bin_8P/
+bin_4P/
+*/obj/**
+packages/*/**
 *.userprefs
+
+Bartizan.v12.suo
