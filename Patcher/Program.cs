@@ -205,6 +205,10 @@ namespace Patcher
 		public static void PatchResources()
 		{
 			foreach (var atlasPath in Directory.EnumerateDirectories(Path.Combine("Content", "Atlas"))) {
+
+                if (!File.Exists(Path.Combine("Original", atlasPath + ".xml")))
+                    continue;
+
 				var xml = XElement.Load(Path.Combine("Original", atlasPath + ".xml"));
 
 				string[] files = Directory.GetFiles(atlasPath, "*.png", SearchOption.AllDirectories);
