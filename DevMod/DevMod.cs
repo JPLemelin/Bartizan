@@ -108,7 +108,6 @@ namespace DevMod
         public override void Flap()
         {
             base.Flap();
-            base.DrawOutline();
         }
     }
 }
